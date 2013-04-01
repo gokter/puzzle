@@ -7,11 +7,25 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.regex.Pattern;
 import java.util.Set;
 
 import org.junit.Test;
 
 public class Demo {
+	@Test
+	public void test3(){
+		System.out.println("abc".replaceAll("a|b", "x"));
+		Pattern pattern = Pattern.compile("(aab?)+");
+		int count=0;
+		for(String str="";str.length()<200;str+="a"){
+			if(pattern.matcher(str).matches()){
+				count++;
+			}
+		}
+		System.out.println(count);
+	}
+	
 	private enum Sex {
 		MALE, FEMAIL;
 	}
